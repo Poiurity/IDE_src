@@ -1,0 +1,29 @@
+#define PIN_LED 13
+unsigned int cnt, tog;
+
+void setup() {
+  pinMode(PIN_LED, OUTPUT);
+  Serial.begin(115200);
+  while(!Serial){
+    ;
+  }
+  Serial.println("Hi!");
+  cnt = tog = 0;
+  digitalWrite(PIN_LED, tog);
+}
+
+void loop() {
+  Serial.println(++cnt);
+  tog = tog_state(tog);
+  digitalWrite(PIN_LED, tog);
+  delay(1000);
+}
+
+int tog_state(int tog_change){
+  if (tog_change == 0){
+      return 1; 
+  }
+  else{
+      return 0;
+  }
+}
