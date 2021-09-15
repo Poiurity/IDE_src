@@ -9,10 +9,10 @@ void loop(){
   delay(1000);
 
   int i = 0;
-  for(;i<5;i++){
-    digitalWrite(PIN7, HIGH);
-    delay(100);
+  for(;i<6;i++){
     digitalWrite(PIN7, LOW);
+    delay(100);
+    digitalWrite(PIN7, HIGH);
     delay(100);
   }
   digitalWrite(PIN7, HIGH);
